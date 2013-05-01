@@ -1,0 +1,31 @@
+ {
+    "name": "coffee-script-mapped",
+    "version": "0.1.1",
+    "author": "illniyar",
+    "description": "lightning scrap rest api",
+    "main": "./lib/coffee-script-mapped.js",
+
+    "dependencies": {
+        "source-map": "0.1.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Illniyar/coffee-script-mapped.git"
+    },
+    "licenses": {
+        "type": "MIT",
+        "url": "http://opensource.org/licenses/MIT"        
+    },
+    "homepage": "https://github.com/Illniyar/coffee-script-mapped",
+    "devDependencies": {
+        "coffee-script":"1.6.x",
+        "mocha": "1.9.x",
+        "chai": "1.6.x"
+    },
+    "scripts": {
+        "test": "mocha --harmony-proxies --recursive --reporter Spec"
+    },
+    "bin": {
+        "coffeem": "./bin/coffeem"
+    }
+ }

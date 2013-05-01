@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var coffeeLocation = path.dirname(require.resolve("coffee-script"))
+
+if (process.argv.indexOf("--no-source-maps") >=0) {
+    var index = process.argv.indexOf("--no-source-maps");
+    process.argv = process.argv.splice(index,1);
+} else {
+    require("../lib/coffee-script-mapped");
+
+    var prevPrepare = Error.prepareStackTrace;
+    Error.prepareStackTrace = function() {
+        var result = prevPrepare.apply(this,arguments)
+        var match =/\n.*exports\.run.*coffee-script\.js:/.exec(result)
+        if (match)
+            return result.substr(0,match.index);
+        else 
+            return result
+    }
+    Object.defineProperty(Error, "prepareStackTrace", {
+        writable: false
+    });
+}
+require(coffeeLocation + '/command').run()
