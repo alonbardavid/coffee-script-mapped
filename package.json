@@ -1,6 +1,6 @@
  {
     "name": "coffee-script-mapped",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "author": "illniyar",
     "description": "coffee-script with stack trace mapping",
     "main": "./lib/coffee-script-mapped.js",
