@@ -1,4 +1,4 @@
-require("../lib/coffee-script-mapped");
+var coffee = require("../lib/coffee-script-mapped");
 var test =require("./coffeeTest");
 var expect = require("chai").expect;
 
@@ -31,5 +31,13 @@ describe("stack trace test", function () {
                 expect(lines[2]).to.match(/coffeeTest\.coffee:7:4\)$/)
             }
         })
+		it("should show proper coffee stack when we have syntax error", function() {
+			try {
+				require("./badSyntax")
+			} catch (err) {
+				var result = err.stack
+                expect(result).to.match(/badSyntax.coffee:7:1.*unmatched }/)
+			}
+		});
     });
 })

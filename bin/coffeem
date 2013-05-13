@@ -18,8 +18,5 @@ if (process.argv.indexOf("--no-source-maps") >=0) {
         else 
             return result
     }
-    Object.defineProperty(Error, "prepareStackTrace", {
-        writable: false
-    });
 }
 require(coffeeLocation + '/command').run()
