@@ -18,12 +18,12 @@
     },
     "homepage": "https://github.com/Illniyar/coffee-script-mapped",
     "devDependencies": {
-        "coffee-script":"1.6.x",
+        "coffee-script":"1.7.x",
         "mocha": "1.9.x",
         "chai": "1.6.x"
     },
     "scripts": {
-        "test": "mocha --harmony-proxies --recursive --reporter Spec"
+        "test": "mocha --harmony-proxies --recursive --reporter spec"
     },
     "bin": {
         "coffeem": "./bin/coffeem"
